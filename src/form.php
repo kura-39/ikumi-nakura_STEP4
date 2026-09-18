@@ -57,10 +57,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
      * メールアドレス
      */
     if ($email === '') {
-        $errors['email'] = 'メールアドレスを入力してください。';
-    } elseif (filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
-        $errors['email'] = '正しいメールアドレスを入力してください。';
-    }
+    $errors['email'] = 'メールアドレスを入力してください。';
+} elseif (filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
+    $errors['email'] = 'メールアドレスの形式が正しくありません。';
+}
 
     /*
      * 住所
